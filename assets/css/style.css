@@ -1,0 +1,15 @@
+.jumbotron {
+	text-align: center;
+}
+
+.centering {
+	text-align: center;
+	color: white;
+}
+.background{
+	background-image: url("../images/noosebackground.jpg");
+	background-color: grey;
+}
+h1 {
+	font-size: 84px;
+}
