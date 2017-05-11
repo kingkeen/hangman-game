@@ -74,7 +74,7 @@ function hangman() {
 
 	//Display is changed to show the empty slots of letters
 	for (i = 0; i < wordLength; i++) {
-		wordCurrent += "_ ";
+		wordCurrent += "_";
 		
 		//writes to HTML the number of letters of the hidden random word. 
 		var hiddenLines = document.querySelector("#hiddenLines");
@@ -92,15 +92,25 @@ function hangman() {
 
 
 
-	    // Letter is compared to Array of chosen letters, [THIS COULD BE DONE BETTER IN A FOR-LOOP...? ]
-		
-		if ((currentWordArray[j].charAt(0) === "chosenLetter") || (currentWordArray[j].charAt(1) === "chosenLetter") || (currentWordArray[j].charAt(2) === "chosenLetter") || (currentWordArray[j].charAt(3) === "chosenLetter") || (currentWordArray[j].charAt(4) === "chosenLetter") || (currentWordArray[j].charAt(5) === "chosenLetter") || (currentWordArray[j].charAt(6) === "chosenLetter") || (currentWordArray[j].charAt(7) === "chosenLetter") || (currentWordArray[j].charAt(8) === "chosenLetter")) {
-			correctGuesses.push(chosenLetter);
-			//add the letter to the appropriate index location of variable Array "hiddenLines" so that the letter appears instead of "_", add to chosenLettersArray.
+//loop will go thru the array of the word chosen and check each index for the letter, then send that letter to the array with the '-' underscores. 
+			for (var i = 0; i < currentWordArray.length - 1;  i++) {
+				if (currentWordArray[i] == chosenLetter) {
+					wordHidden[i]=chosenLetter;
+				};
+			};
 
-		  } else {
-		  	livesLeft--;
-		  }		
+
+
+//Le++er is compared to Array of chosen letters, [THIS COULD BE DONE BETTER IN A FOR-LOOP...? ]
+
+		}
+		// if ((currentWordArray[j].charAt(0) === "chosenLetter") || (currentWordArray[j].charAt(1) === "chosenLetter") || (currentWordArray[j].charAt(2) === "chosenLetter") || (currentWordArray[j].charAt(3) === "chosenLetter") || (currentWordArray[j].charAt(4) === "chosenLetter") || (currentWordArray[j].charAt(5) === "chosenLetter") || (currentWordArray[j].charAt(6) === "chosenLetter") || (currentWordArray[j].charAt(7) === "chosenLetter") || (currentWordArray[j].charAt(8) === "chosenLetter")) {
+		// 	correctGuesses.push(chosenLetter);
+		// 	//add the letter to the appropriate index location of variable Array "hiddenLines" so that the letter appears instead of "_", add to chosenLettersArray.
+
+		//   } else {
+		//   	livesLeft--;
+		//   }		
 
 			//if all letters have been chosen in the wordHidden, then Alert "You are pardoned"
 			
@@ -134,7 +144,7 @@ function hangman() {
 				
 		// 		else, moves to LOOP-2
 
-};
+
 
 
 
